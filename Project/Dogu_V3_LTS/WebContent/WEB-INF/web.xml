@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name></display-name>
+	<!-- javamelody listener start -->
+	<listener>
+		<listener-class>net.bull.javamelody.SessionListener</listener-class>
+	</listener>
+	<!-- javamelody listener end -->
+	<!-- javamelody filter start -->
+	<filter>
+		<filter-name>javamelody</filter-name>
+		<filter-class>net.bull.javamelody.MonitoringFilter</filter-class>
+		<async-supported>true</async-supported>
+	</filter>
+	<!-- javamelody filter end -->
+	<!-- jfinal filter start -->
+	<filter>
+		<filter-name>Filter</filter-name>
+		<filter-class>com.jfinal.core.JFinalFilter</filter-class>
+		<init-param>
+			<param-name>configClass</param-name>
+			<param-value>com.dogu.config.SystemConfig</param-value>
+		</init-param>
+	</filter>
+	<!-- jfinal filter end -->
+	<!-- javamelody filter-mapping start -->
+	<filter-mapping>
+		<filter-name>javamelody</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- javamelody filter-mapping end -->
+	<!-- jfinal filter-mapping start -->
+	<filter-mapping>
+		<filter-name>Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- jfinal filter-mapping end -->
+	<!-- session-config start -->
+	<session-config>
+		<session-timeout>300</session-timeout>
+	</session-config>
+	<!-- session-config end -->
+</web-app>

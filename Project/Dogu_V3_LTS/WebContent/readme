@@ -1,0 +1,20 @@
++-------------------------------------------------------------------+
+|Dogu开源框架自身对第三方无强制性依赖,但当需要第三方功能支持时则需要添加相应的 jar文件   |
+|以下所有常用的第三方资源都创建了相关目录分开整理过,在使用时以目录为单添加 jar 文件即可   |
++-------------------------------------------------------------------+
+1：cos-2017.5.jar------支持文件上传功能
+2：mysql-connector-java-5.1.44-bin.jar------支持 mysql 数据库5.x版本
+3：mysql-connector-java-8.0.13.jar------支持 mysql 数据库8.x版本
+4：druid-1.0.29.jar 支持 Druid------数据库连接池
+5：c3p0-0.9.5.2.jar/mchange-commons-java-0.2.11.jar------数据库连接池 c3p0
+6：jackson-core-2.5.3.jar/jackson-databind-2.4.3.jar/jackson-annotations-2.4.0.jar------json与xml操作工具jackson
+7：fastjson-1.2.31.jar------json 操作工具 fastjson
+8：cron4j-2.2.5.jar------支持 cron4j任务调度
+9：jedis-2.7.2.jar/commons-pool2-2.3.jar/fst-2.29.jar/jackson-core-2.5.3.jar/javassist-3.19.0-GA.jar/bjenesis-2.1.jar------支持 redis
+10：log4j-1.2.16.jar------支持 log4j日志,当此文件不存在时,自动切换至 JDK Logger,
+注意：log4j需要相应的配置文件 log4j.properties,否则当log4j-1.2.16.jar存在而log4j.properties不存在时无日志输出。
+11：javax.servlet.jsp.jstl-api-1.2.2.jar/org.apache.taglibs.standard.glassfish-1.2.0.v201112081803.jar------支持JSP标准标签库：JSTL(JSP Standard Tag Library)
+12：sqlite-jdbc-3.7.2.jar 支持 Sqlite------数据库
+13：ojdbc6.jar------Oracle Database 11g Release 2 (11.2.0.3) JDBC Driver建议换上与 Oracle 版本最符合的驱动
+注意：在使用tomcat开发或部署项目时,需要删除jetty-server-xxx.jar文件,以免造成冲突
+如果项目的访问地址不包含项目路径,则需要将"WebContent/SYSTEM/commom/common.js"文件中"getRootPath(true)"的"true"改为"false"

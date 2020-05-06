@@ -1,0 +1,8 @@
+一、MySQL_V3.sql：支持V1.0至V3.5.2的程序，
+二、MySQL_V4.sql：支持V4.0以上(含)，v5.0以下的程序
+三、MySQL_V5.sql：支持V5.0以上(含)的程序
+四、数据库配置文件：
+com.dogu.properties.Db.FirstDbLink.properties(第一个数据库链接文件)
+com.dogu.properties.Db.SecondDbLink.properties(第二个数据库链接文件)
+多个数据库链接请参考：com.dogu.properties.Db.ReadMe.txt
+四、如果需要其他数据库，则已Mysql为基础进行转换即可
